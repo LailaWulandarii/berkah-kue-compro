@@ -23,81 +23,77 @@
 
 <body>
     <?= $this->include('layouts/navbar'); ?>
-    <a href="https://<?= $kontak['link_wa']; ?>" target="_blank" class="whatsapp-button">
-        <img src="<?= base_url('assets/img/logo/wa.png'); ?>" width="30" alt="WhatsApp">
-        <?= lang('bahasa.buttonSlider'); ?>
-    </a>
 
     <?= $this->renderSection('content'); ?>
 
     <?= $this->include('layouts/footer'); ?>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<script>
-    // Aktivitas slider (pastikan elemen .aktivitas-slider, .prev-btn, .next-btn ada di HTML)
-    document.addEventListener('DOMContentLoaded', function() {
-        const slider = document.querySelector('.aktivitas-slider');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
+    <script>
+        // Aktivitas slider (pastikan elemen .aktivitas-slider, .prev-btn, .next-btn ada di HTML)
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.aktivitas-slider');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
 
-        if (slider && prevBtn && nextBtn) { // Add checks to prevent errors if elements don't exist
-            prevBtn.addEventListener('click', () => {
-                slider.scrollBy({
-                    left: -300,
-                    behavior: 'smooth'
+            if (slider && prevBtn && nextBtn) { // Add checks to prevent errors if elements don't exist
+                prevBtn.addEventListener('click', () => {
+                    slider.scrollBy({
+                        left: -300,
+                        behavior: 'smooth'
+                    });
                 });
-            });
 
-            nextBtn.addEventListener('click', () => {
-                slider.scrollBy({
-                    left: 300,
-                    behavior: 'smooth'
+                nextBtn.addEventListener('click', () => {
+                    slider.scrollBy({
+                        left: 300,
+                        behavior: 'smooth'
+                    });
                 });
-            });
-        }
-    });
-</script>
-<script>
-    // Produk Description Truncation (using textContent for plain text)
-    document.addEventListener('DOMContentLoaded', function() {
-        const descriptionElements = document.querySelectorAll('.produk-description');
-        const characterLimit = 150; // Adjust this limit as needed for product cards
-
-        descriptionElements.forEach(descElement => {
-            const originalText = descElement.textContent;
-            let truncatedText = originalText;
-
-            // Method: Truncate by CHARACTER count
-            if (originalText.length > characterLimit) {
-                // Ensure we don't cut in the middle of a word if possible,
-                // but for simple char limit, this is effective.
-                truncatedText = originalText.substring(0, characterLimit).trim() + '...';
             }
-            descElement.textContent = truncatedText;
         });
-    });
-</script>
-<script>
-    // Navbar Scroll Effect
-    document.addEventListener('DOMContentLoaded', function() {
-        const navbar = document.querySelector('.glass-navbar');
-        const scrollThreshold = 100;
+    </script>
+    <script>
+        // Produk Description Truncation (using textContent for plain text)
+        document.addEventListener('DOMContentLoaded', function() {
+            const descriptionElements = document.querySelectorAll('.produk-description');
+            const characterLimit = 150; // Adjust this limit as needed for product cards
 
-        // Check if navbar exists to prevent errors on pages without it
-        if (navbar) {
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > scrollThreshold) {
-                    navbar.classList.add('scrolled-navbar');
-                } else {
-                    navbar.classList.remove('scrolled-navbar');
+            descriptionElements.forEach(descElement => {
+                const originalText = descElement.textContent;
+                let truncatedText = originalText;
+
+                // Method: Truncate by CHARACTER count
+                if (originalText.length > characterLimit) {
+                    // Ensure we don't cut in the middle of a word if possible,
+                    // but for simple char limit, this is effective.
+                    truncatedText = originalText.substring(0, characterLimit).trim() + '...';
                 }
+                descElement.textContent = truncatedText;
             });
-        }
-    });
-</script>
+        });
+    </script>
+    <script>
+        // Navbar Scroll Effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.querySelector('.glass-navbar');
+            const scrollThreshold = 100;
+
+            // Check if navbar exists to prevent errors on pages without it
+            if (navbar) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > scrollThreshold) {
+                        navbar.classList.add('scrolled-navbar');
+                    } else {
+                        navbar.classList.remove('scrolled-navbar');
+                    }
+                });
+            }
+        });
+    </script>
 
 </body>
 
