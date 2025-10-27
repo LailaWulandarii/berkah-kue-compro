@@ -29,14 +29,6 @@
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
-
-    <!-- Tombol Navigasi -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#hero" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#hero" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button>
 </section>
 
 
@@ -72,8 +64,8 @@
         <!-- Tombol -->
         <div class="col-md-6">
             <p><a href="<?= base_url($lang == 'id' ? 'id/tentang' : 'en/about') ?>" class="btn btn-grey mt-3">
-                <?= lang('bahasa.buttonAbout'); ?> <i class="bi bi-arrow-right"></i>
-            </a></p>
+                    <?= lang('bahasa.buttonAbout'); ?> <i class="bi bi-arrow-right"></i>
+                </a></p>
         </div>
     </div>
 </section>
@@ -126,7 +118,8 @@
                     <a class="aktivitas-card" href="<?= base_url(
                                                         $lang === 'id'
                                                             ? 'id/aktivitas/' . ($p['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($p['slug_aktivitas_id'] ?? 'aktivitas-tidak-ditemukan')
-                                                            : 'en/activity/' . ($p['slug_kategori_en'] ?? 'category-not-found') . '/' . ($p['slug_aktivitas_en'] ?? 'activity-not-found')); ?>">
+                                                            : 'en/activity/' . ($p['slug_kategori_en'] ?? 'category-not-found') . '/' . ($p['slug_aktivitas_en'] ?? 'activity-not-found')
+                                                    ); ?>">
                         <div class="aktivitas-thumb">
                             <img src="<?= base_url('assets/img/aktivitas/' . $p['foto_aktivitas']); ?>" alt="<?= $lang == 'id' ? $p['alt_aktivitas_id'] : $p['alt_aktivitas_en']; ?>">
                         </div>
